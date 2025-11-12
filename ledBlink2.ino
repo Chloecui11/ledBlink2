@@ -9,11 +9,13 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH);  
-  digitalWrite(ledPin, LOW);
-  delay(500); 
-  digitalWrite(ledPin2, HIGH);  
-  digitalWrite(ledPin2, LOW);
-  delay(500); 
+  int buttonState = digitalRead(buttonPin);
 
+  if (buttonState == LOW) {
+    digitalWrite(ledPin, HIGH);
+    digitalWrite(ledPin2, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+    digitalWrite(ledPin2, LOW);
+  }
 }
